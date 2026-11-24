@@ -36,9 +36,9 @@ public class BuscaListener {
                 log.warn("Mensaje recibido, pero la persona {} no existe",
                         info.getIdAsistente());
             }
-            Optional<Reunion> reunion = reunionService.getById(info.getIdAsistente());
+            Optional<Reunion> reunion = reunionService.getById(info.getIdReunion());
             if (reunion.isEmpty()) {
-                log.warn("Mensaje recibido, pero la reunión {} no exite",
+                log.warn("Mensaje recibido, pero la reunión {} no existe",
                         info.getIdReunion());
             }
             if (persona.isPresent() && reunion.isPresent()) {
